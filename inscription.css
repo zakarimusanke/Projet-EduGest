@@ -1,0 +1,304 @@
+/* inscription.css — Styles de la page d'inscription*/
+
+/*Styles généraux*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+/*BARRE DE NAVIGATION*/
+nav {
+  background-color: #0a2d6e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 60px;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-liens {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-liens a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-liens a:hover,
+.nav-liens a.active {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.btn-deconnexion {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.btn-deconnexion:hover {
+  background: #c0392b;
+}
+
+/* CONTENU PRINCIPAL*/
+main {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 35px 20px 60px;
+}
+
+/* Titre de la page */
+.titre-page {
+  margin-bottom: 24px;
+}
+
+.titre-page h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0a2d6e;
+}
+
+.titre-page p {
+  font-size: 13px;
+  color: #888;
+  margin-top: 3px;
+}
+
+/*BARRE DE RECHERCHE*/
+.zone-recherche {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  position: relative;
+}
+
+.zone-recherche label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.zone-recherche input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.zone-recherche input:focus {
+  border-color: #0a2d6e;
+  outline: none;
+}
+
+/* Liste des résultats de recherche */
+.resultats-recherche {
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  z-index: 10;
+  display: none;  /* caché par défaut */
+}
+
+.resultat-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+
+.resultat-item:last-child {
+  border-bottom: none;
+}
+
+.resultat-item:hover {
+  background: #f0f5ff;
+}
+
+.resultat-item strong {
+  color: #0a2d6e;
+}
+
+.resultat-item span {
+  color: #888;
+  font-size: 12px;
+}
+
+/*FORMULAIRE D'INSCRIPTION*/
+.formulaire {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+/* Chaque champ du formulaire */
+.champ {
+  margin-bottom: 18px;
+}
+
+.champ label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.champ input,
+.champ select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.champ input:focus,
+.champ select:focus {
+  border-color: #0a2d6e;
+  outline: none;
+}
+
+/* Deux colonnes côte à côte */
+.deux-colonnes {
+  display: flex;
+  gap: 16px;
+}
+
+.deux-colonnes .champ {
+  flex: 1;
+}
+
+/* Séparateur avant les boutons */
+.separateur {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 24px 0 20px;
+}
+
+/*LES 4 BOUTONS D'ACTION*/
+.boutons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Style de base commun à tous les boutons */
+.boutons button {
+  padding: 11px 22px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.boutons button:hover {
+  opacity: 0.88;
+}
+
+.boutons button:active {
+  transform: scale(0.97);
+}
+
+/* Bouton Enregistrer – bleu */
+.btn-enregistrer {
+  background-color: #0a2d6e;
+  color: white;
+}
+
+/* Bouton Modifier – orange */
+.btn-modifier {
+  background-color: #e67e22;
+  color: white;
+}
+
+/* Bouton Supprimer – rouge */
+.btn-supprimer {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Bouton Réinitialiser – gris */
+.btn-reinitialiser {
+  background-color: #bdc3c7;
+  color: #333;
+}
+
+/*MESSAGES DE RETOUR (succès / erreur)*/
+.message {
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: none;   /* caché par défaut */
+}
+
+.message.succes {
+  background: #eafaf1;
+  border: 1px solid #a9dfbf;
+  color: #1e8449;
+}
+
+.message.erreur {
+  background: #fff0f0;
+  border: 1px solid #f5c6c6;
+  color: #c0392b;
+}
+
+/* Indication quand un étudiant est chargé dans le formulaire */
+.indication {
+  background: #f0f5ff;
+  border: 1px solid #c8daff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #0a2d6e;
+  margin-bottom: 16px;
+  display: none;   /* caché par défaut */
+}

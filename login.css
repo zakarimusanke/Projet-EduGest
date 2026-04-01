@@ -1,0 +1,144 @@
+/*Styles de la page de connexion*/
+
+/* ---- Styles généraux ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  /* Image de fond : photo d'une université */
+  background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+
+  /* On centre le contenu verticalement et horizontalement */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Voile sombre par-dessus l'image pour améliorer la lisibilité */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 60, 0.65);
+}
+
+/* CARTE DE CONNEXION*/
+.carte {
+  position: relative;        /* passe devant le voile */
+  background: white;
+  border-radius: 16px;
+  padding: 45px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* En-tête de la carte */
+.carte-entete {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.carte-entete .icone {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.carte-entete h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0a2d6e;
+}
+
+.carte-entete p {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* CHAMPS DU FORMULAIRE*/
+.champ {
+  margin-bottom: 20px;
+}
+
+.champ label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.champ input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.2s;
+}
+
+/* Effet quand on clique dans le champ */
+.champ input:focus {
+  border-color: #0a2d6e;
+  outline: none;
+}
+
+/*BOUTON CONNEXION*/
+.btn-connexion {
+  width: 100%;
+  padding: 13px;
+  background-color: #0a2d6e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+
+.btn-connexion:hover {
+  background-color: #0d3d99;
+}
+
+/* MESSAGE D'ERREUR*/
+.erreur {
+  background: #fff0f0;
+  border: 1px solid #f5c6c6;
+  color: #c0392b;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-top: 14px;
+  display: none;  /* caché par défaut */
+}
+
+/*ENCADRÉ D'AIDE (identifiants démo)*/
+.aide {
+  background: #f0f5ff;
+  border: 1px solid #c8daff;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: #0a2d6e;
+  margin-top: 18px;
+  line-height: 1.8;
+}
+
+.aide strong {
+  font-weight: 700;
+}

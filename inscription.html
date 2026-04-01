@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGest – Inscription</title>
+
+  <!-- Police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Fichier CSS séparé (à la place du bloc <style>) -->
+  <link rel="stylesheet" href="inscription.css" />
+</head>
+
+<body>
+
+  <!--BARRE DE NAVIGATION-->
+  <nav>
+    <a href="accueil.html" class="nav-logo">🎓 EduGest</a>
+    <div class="nav-liens">
+      <a href="accueil.html">Accueil</a>
+      <a href="inscription.html" class="active">Inscription</a>
+      <a href="listing.html">Étudiants</a>
+      <button class="btn-deconnexion" onclick="seDeconnecter()">Déconnexion</button>
+    </div>
+  </nav>
+
+  <!--CONTENU PRINCIPAL-->
+  <main>
+
+    <!-- Titre -->
+    <div class="titre-page">
+      <h2>📝 Inscription d'un étudiant</h2>
+      <p>Remplissez les informations puis cliquez sur <strong>Enregistrer</strong>.</p>
+    </div>
+
+    <!-- ---- Barre de recherche ---- -->
+    <div class="zone-recherche">
+      <label>🔍 Rechercher un étudiant (pour modifier ou supprimer)</label>
+      <input
+        type="text"
+        id="champ-recherche"
+        placeholder="Tapez un nom, prénom ou matricule..."
+        oninput="rechercherEtudiant()"
+        autocomplete="off"
+      />
+      <!-- Les résultats apparaissent ici -->
+      <div class="resultats-recherche" id="resultats"></div>
+    </div>
+
+    <!-- ---- Formulaire principal ---- -->
+    <div class="formulaire">
+
+      <!-- Message de retour (succès ou erreur) -->
+      <div class="message" id="message"></div>
+
+      <!-- Indication : étudiant chargé depuis la recherche -->
+      <div class="indication" id="indication">
+        ✏️ Étudiant chargé — modifiez les champs puis cliquez sur <strong>Modifier</strong> ou <strong>Supprimer</strong>.
+      </div>
+
+      <!-- Champ caché pour mémoriser l'ID de l'étudiant en cours -->
+      <input type="hidden" id="id-etudiant" />
+
+      <!-- Matricule + Statut -->
+      <div class="deux-colonnes">
+        <div class="champ">
+          <label>Matricule</label>
+          <input type="text" id="matricule" placeholder="Ex : A 00000" />
+        </div>
+        <div class="champ">
+          <label>Statut</label>
+          <select id="statut">
+            <option value="Actif">Actif</option>
+            <option value="Inactif">Inactif</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Prénom + Nom -->
+      <div class="deux-colonnes">
+        <div class="champ">
+          <label>Prénom </label>
+          <input type="text" id="prenom" placeholder="Ex : Jean" />
+        </div>
+        <div class="champ">
+          <label>Nom </label>
+          <input type="text" id="nom" placeholder="Ex : Dupont" />
+        </div>
+      </div>
+
+      <!-- Date de naissance + Genre -->
+      <div class="deux-colonnes">
+        <div class="champ">
+          <label>Date de naissance</label>
+          <input type="date" id="naissance" />
+        </div>
+        <div class="champ">
+          <label>Genre</label>
+          <select id="genre">
+            <option value="">Sélectionner</option>
+            <option value="Masculin">Masculin</option>
+            <option value="Féminin">Féminin</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="champ">
+        <label>Email </label>
+        <input type="email" id="email" placeholder="Ex : jean.@email.com" />
+      </div>
+
+      <!-- Téléphone -->
+      <div class="champ">
+        <label>Téléphone</label>
+        <input type="tel" id="telephone" placeholder="Ex : +243 " />
+      </div>
+
+      <!-- Filière + Niveau -->
+      <div class="deux-colonnes">
+        <div class="champ">
+          <label>Filière </label>
+          <select id="filiere">
+            <option value="">Sélectionner </option>
+            <option>Informatique</option>
+            <option>Économie</option>
+            <option>Médecine</option>
+            <option>Droit</option>
+          </select>
+        </div>
+        <div class="champ">
+          <label>Niveau</label>
+          <select id="niveau">
+            <option value="">  Niveau </option>
+            <option>Licence 1</option>
+            <option>Licence 2</option>
+            <option>Licence 3</option>
+            <option>Master 1</option>
+            <option>Master 2</option>
+            <option>Doctorat</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Année académique -->
+      <div class="champ">
+        <label>Année académique</label>
+        <input type="text" id="annee" placeholder="Ex : 2024-2025" />
+      </div>
+
+      <!-- Séparateur -->
+      <hr class="separateur" />
+
+      <!--LES 4 BOUTONS D'ACTION-->
+      <div class="boutons">
+        <button class="btn-enregistrer" onclick="enregistrer()">💾 Enregistrer</button>
+        <button class="btn-modifier"    onclick="modifier()">✏️ Modifier</button>
+        <button class="btn-supprimer"   onclick="supprimer()">🗑️ Supprimer</button>
+        <button class="btn-reinitialiser" onclick="reinitialiser()">↺ Réinitialiser</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Fichier JavaScript séparé (à la place du bloc <script>) -->
+  <script src="inscription.js"></script>
+
+</body>
+</html>

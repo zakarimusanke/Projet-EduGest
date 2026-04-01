@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGest – Liste des étudiants</title>
+
+  <!-- Police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Fichier CSS séparé (à la place du bloc <style>) -->
+  <link rel="stylesheet" href="listing.css" />
+</head>
+
+<body>
+
+  <!--BARRE DE NAVIGATION-->
+  <nav>
+    <a href="accueil.html" class="nav-logo">🎓 EduGest</a>
+    <div class="nav-liens">
+      <a href="accueil.html">Accueil</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="listing.html" class="active">Étudiants</a>
+      <button class="btn-deconnexion" onclick="seDeconnecter()">Déconnexion</button>
+    </div>
+  </nav>
+
+  <!-- CONTENU PRINCIPAL-->
+  <main>
+
+    <!-- En-tête -->
+    <div class="page-entete">
+      <div>
+        <h2>📋 Liste des étudiants</h2>
+        <p>Tous les étudiants inscrits dans le système</p>
+      </div>
+      <a href="inscription.html" class="btn-inscrire">➕ Inscrire</a>
+    </div>
+
+    <!-- Barre de filtres -->
+    <div class="filtres">
+      <!-- Champ de recherche -->
+      <input
+        type="text"
+        id="recherche"
+        placeholder="🔍  Rechercher par nom, prénom ou matricule..."
+        oninput="filtrer()"
+      />
+
+      <!-- Filtre par filière -->
+      <select id="filtre-filiere" onchange="filtrer()">
+        <option value="">Toutes les filières</option>
+        <option>Informatique</option>
+        <option>Économie</option>
+        <option>Médecine</option>
+        <option>Droit</option>
+      </select>
+
+      <!-- Filtre par statut -->
+      <select id="filtre-statut" onchange="filtrer()">
+        <option value="">Tous les statuts</option>
+        <option value="Actif">Actif</option>
+        <option value="Inactif">Inactif</option>
+      </select>
+
+      <!-- Nombre d'étudiants affiché -->
+      <span class="compteur" id="compteur">0 étudiant(s)</span>
+    </div>
+
+    <!-- Tableau des étudiants -->
+    <div class="conteneur-tableau">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Prénom & Nom</th>
+            <th>Matricule</th>
+            <th>Filière</th>
+            <th>Niveau</th>
+            <th>Email</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="corps-tableau">
+          <!-- Les lignes sont générées par JavaScript -->
+        </tbody>
+      </table>
+
+      <!-- Affiché si aucun étudiant -->
+      <div class="tableau-vide" id="tableau-vide" style="display: none;">
+        <p>Aucun étudiant trouvé.</p>
+        <a href="inscription.html" class="btn-inscrire">➕ Inscrire le premier étudiant</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!--FENÊTRE MODALE – MODIFIER UN ÉTUDIANT-->
+  <div class="fond-modal" id="fond-modal">
+    <div class="modal">
+
+      <h3>✏️ Modifier l'étudiant</h3>
+
+      <!-- ID caché pour savoir quel étudiant on modifie -->
+      <input type="hidden" id="modal-id" />
+
+      <!-- Prénom + Nom -->
+      <div class="modal-deux-colonnes">
+        <div class="modal-champ">
+          <label>Prénom</label>
+          <input type="text" id="modal-prenom" />
+        </div>
+        <div class="modal-champ">
+          <label>Nom</label>
+          <input type="text" id="modal-nom" />
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="modal-champ">
+        <label>Email</label>
+        <input type="email" id="modal-email" />
+      </div>
+
+      <!-- Filière + Niveau -->
+      <div class="modal-deux-colonnes">
+        <div class="modal-champ">
+          <label>Filière</label>
+          <select id="modal-filiere">
+            <option>Informatique</option>
+            <option>Économie</option>
+            <option>Médecine</option>
+            <option>Droit</option>
+          </select>
+        </div>
+        <div class="modal-champ">
+          <label>Niveau</label>
+          <select id="modal-niveau">
+            <option>Licence 1</option>
+            <option>Licence 2</option>
+            <option>Licence 3</option>
+            <option>Master 1</option>
+            <option>Master 2</option>
+            <option>Doctorat</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Statut -->
+      <div class="modal-champ">
+        <label>Statut</label>
+        <select id="modal-statut">
+          <option value="Actif">Actif</option>
+          <option value="Inactif">Inactif</option>
+        </select>
+      </div>
+
+      <!-- Boutons Annuler / Sauvegarder -->
+      <div class="modal-boutons">
+        <button class="btn-annuler" onclick="fermerModal()">Annuler</button>
+        <button class="btn-sauvegarder" onclick="sauvegarder()">💾 Sauvegarder</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fichier JavaScript séparé (à la place du bloc <script>) -->
+  <script src="listing.js"></script>
+
+</body>
+</html>

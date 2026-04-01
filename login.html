@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGest – Connexion</title>
+
+  <!-- Police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Fichier CSS séparé (à la place du bloc <style>) -->
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+  <!--CARTE DE CONNEXION-->
+  <div class="carte">
+
+    <!-- En-tête -->
+    <div class="carte-entete">
+      <span class="icone">🎓</span>
+      <h1>EduGest</h1>
+      <p>Gestion des étudiants</p>
+    </div>
+
+    <!-- Champ : Identifiant -->
+    <div class="champ">
+      <label for="identifiant">Identifiant</label>
+      <input
+        type="text"
+        id="identifiant"
+        placeholder="Entrez votre identifiant"
+      />
+    </div>
+
+    <!-- Champ : Mot de passe -->
+    <div class="champ">
+      <label for="motdepasse">Mot de passe</label>
+      <input
+        type="password"
+        id="motdepasse"
+        placeholder="Entrez votre mot de passe"
+      />
+    </div>
+
+    <!-- Bouton de connexion -->
+    <button class="btn-connexion" onclick="seConnecter()">
+      Se connecter →
+    </button>
+
+    <!-- Message d'erreur (affiché si mauvais identifiants) -->
+    <div class="erreur" id="msg-erreur">
+      ❌ Identifiant ou mot de passe incorrect.
+    </div>
+
+    <!-- Encadré d'aide avec les identifiants de démo -->
+    <div class="aide">
+      <strong>Compte démo :</strong><br>
+      Identifiant : <strong>Musanke</strong><br>
+      Mot de passe : <strong>0000</strong>
+    </div>
+
+  </div>
+
+  <!-- Fichier JavaScript séparé (à la place du bloc <script>) -->
+  <script src="login.js"></script>
+
+</body>
+</html>

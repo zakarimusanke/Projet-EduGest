@@ -1,0 +1,370 @@
+/* Styles de la page liste des étudiants*/
+
+/* ---- Styles généraux ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+/*BARRE DE NAVIGATION*/
+nav {
+  background-color: #0a2d6e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 60px;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-liens {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-liens a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-liens a:hover,
+.nav-liens a.active {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.btn-deconnexion {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.btn-deconnexion:hover {
+  background: #c0392b;
+}
+
+/* CONTENU PRINCIPAL */
+main {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 35px 20px 60px;
+}
+
+/* En-tête de la page */
+.page-entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.page-entete h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0a2d6e;
+}
+
+.page-entete p {
+  font-size: 13px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* Bouton "Inscrire un étudiant" */
+.btn-inscrire {
+  background-color: #0a2d6e;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn-inscrire:hover {
+  background-color: #0d3d99;
+}
+
+/* BARRE DE FILTRES (recherche + filière)*/
+.filtres {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.filtres input,
+.filtres select {
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  background: white;
+}
+
+.filtres input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.filtres input:focus,
+.filtres select:focus {
+  border-color: #0a2d6e;
+  outline: none;
+}
+
+/* Compteur d'étudiants */
+.compteur {
+  font-size: 13px;
+  color: #888;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/*TABLEAU DES ÉTUDIANTS*/
+.conteneur-tableau {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow-x: auto;   /* défilement horizontal sur petit écran */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* En-tête du tableau */
+thead {
+  background-color: #0a2d6e;
+}
+
+th {
+  padding: 14px 16px;
+  text-align: left;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Cellules du corps du tableau */
+td {
+  padding: 13px 16px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+/* Alterner la couleur des lignes */
+tbody tr:nth-child(even) td {
+  background-color: #fafbff;
+}
+
+tbody tr:hover td {
+  background-color: #f0f5ff;
+}
+
+/* ---- Badge de statut (Actif / Inactif) ---- */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-actif {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1px solid #a9dfbf;
+}
+
+.badge-inactif {
+  background: #fff0f0;
+  color: #c0392b;
+  border: 1px solid #f5c6c6;
+}
+
+/* ---- Boutons d'action dans chaque ligne ---- */
+.btn-ligne {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-ligne:hover {
+  opacity: 0.80;
+}
+
+.btn-modifier-ligne {
+  background: #e67e22;
+  color: white;
+  margin-right: 6px;
+}
+
+.btn-supprimer-ligne {
+  background: #e74c3c;
+  color: white;
+}
+
+/* ---- Message si le tableau est vide ---- */
+.tableau-vide {
+  text-align: center;
+  padding: 60px 20px;
+  color: #aaa;
+}
+
+.tableau-vide p {
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+/* FENÊTRE MODALE – MODIFIER UN ÉTUDIANT
+ */
+
+/* Fond assombri derrière la modale */
+.fond-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 100;
+  display: none;              /* cachée par défaut */
+  align-items: center;
+  justify-content: center;
+}
+
+/* La boîte blanche de la modale */
+.modal {
+  background: white;
+  border-radius: 14px;
+  padding: 32px;
+  width: 90%;
+  max-width: 460px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a2d6e;
+  margin-bottom: 22px;
+}
+
+/* Champs à l'intérieur de la modale */
+.modal-champ {
+  margin-bottom: 14px;
+}
+
+.modal-champ label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.modal-champ input,
+.modal-champ select {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  background: white;
+}
+
+.modal-champ input:focus,
+.modal-champ select:focus {
+  border-color: #0a2d6e;
+  outline: none;
+}
+
+/* Deux colonnes dans la modale */
+.modal-deux-colonnes {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-deux-colonnes .modal-champ {
+  flex: 1;
+}
+
+/* Boutons de la modale */
+.modal-boutons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-annuler {
+  padding: 10px 20px;
+  background: #ecf0f1;
+  color: #555;
+  border: none;
+  border-radius: 7px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-sauvegarder {
+  padding: 10px 20px;
+  background: #0a2d6e;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-sauvegarder:hover {
+  background: #0d3d99;
+}

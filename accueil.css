@@ -1,0 +1,199 @@
+/* Styles de la page d'accueil*/
+
+/*Styles généraux  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+
+  /* Image de fond université */
+  background-image: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Voile sombre sur l'image de fond */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 60, 0.60);
+  z-index: 0;
+}
+
+/* Tout le contenu passe devant le voile */
+nav, main {
+  position: relative;
+  z-index: 1;
+}
+
+/* BARRE DE NAVIGATION */
+nav {
+  background: rgba(10, 30, 60, 0.90);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 60px;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+/* Logo dans la nav */
+.nav-logo {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Liens de navigation */
+.nav-liens {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-liens a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-liens a:hover,
+.nav-liens a.active {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* Bouton de déconnexion */
+.btn-deconnexion {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background 0.2s;
+}
+
+.btn-deconnexion:hover {
+  background: #c0392b;
+}
+
+/*CONTENU PRINCIPAL */
+main {
+  padding: 50px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Message de bienvenue */
+.bienvenue {
+  color: white;
+  margin-bottom: 40px;
+}
+
+.bienvenue h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.bienvenue p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+}
+
+/*CARTES DE STATISTIQUES*/
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.stat-carte {
+  background: white;
+  border-radius: 12px;
+  padding: 24px 28px;
+  flex: 1;
+  min-width: 160px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icone {
+  font-size: 34px;
+}
+
+.stat-nombre {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a2d6e;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 3px;
+}
+
+/*CARTES DE NAVIGATION RAPIDE*/
+.navigation-rapide {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-carte {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  flex: 1;
+  min-width: 200px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid #0a2d6e;
+}
+
+.nav-carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.nav-carte .icone {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.nav-carte h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0a2d6e;
+  margin-bottom: 6px;
+}
+
+.nav-carte p {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+}

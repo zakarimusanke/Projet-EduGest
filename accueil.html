@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGest – Accueil</title>
+
+  <!-- Police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Fichier CSS séparé-->
+  <link rel="stylesheet" href="accueil.css" />
+</head>
+
+<body>
+
+  <!-- BARRE DE NAVIGATION -->
+  <nav>
+    <a href="accueil.html" class="nav-logo">🎓 EduGest</a>
+
+    <div class="nav-liens">
+      <a href="accueil.html" class="active">Accueil</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="listing.html">Étudiants</a>
+      <button class="btn-deconnexion" onclick="seDeconnecter()">Déconnexion</button>
+    </div>
+  </nav>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main>
+
+    <!-- Message de bienvenue -->
+    <div class="bienvenue">
+      <h2>Bienvenue, <span id="nom-utilisateur">Admin</span> !</h2>
+      <p>Tableau de bord — Gestion des étudiants</p>
+    </div>
+
+    <!-- Statistiques -->
+    <div class="stats">
+
+      <div class="stat-carte">
+        <div class="stat-icone">👥</div>
+        <div>
+          <div class="stat-nombre" id="stat-total">0</div>
+          <div class="stat-label">Étudiants inscrits</div>
+        </div>
+      </div>
+
+      <div class="stat-carte">
+        <div class="stat-icone">✅</div>
+        <div>
+          <div class="stat-nombre" id="stat-actifs">0</div>
+          <div class="stat-label">Étudiants actifs</div>
+        </div>
+      </div>
+
+      <div class="stat-carte">
+        <div class="stat-icone">📚</div>
+        <div>
+          <div class="stat-nombre" id="stat-filieres">0</div>
+          <div class="stat-label">Filières</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation rapide vers les pages -->
+    <div class="navigation-rapide">
+
+      <a href="inscription.html" class="nav-carte">
+        <span class="icone">📝</span>
+        <h3>Inscrire un étudiant</h3>
+        <p>Remplir le formulaire d'inscription et enregistrer un nouveau dossier.</p>
+      </a>
+
+      <a href="listing.html" class="nav-carte">
+        <span class="icone">📋</span>
+        <h3>Liste des étudiants</h3>
+        <p>Consulter, modifier ou supprimer les dossiers étudiants existants.</p>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- Fichier JavaScript séparé (à la place du bloc <script>) -->
+  <script src="accueil.js"></script>
+
+</body>
+</html>
